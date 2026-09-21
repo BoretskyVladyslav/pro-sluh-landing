@@ -1,4 +1,91 @@
 ---
+import { veteranProgram } from '../data/veterans';
+
+const {
+  title,
+  description,
+  ctaLabel,
+  ctaHref,
+  stepsHeading,
+  steps,
+  documentsHeading,
+  documents,
+  partnerHeading,
+  partner,
+  note,
+} = veteranProgram;
+
 ---
 
-<section id="veterany"></section>
+<section id="veterany" aria-labelledby="veteran-title" class="bg-vet-900 text-vet-50">
+  <div class="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-10 md:gap-12 md:py-16">
+    <header class="flex max-w-3xl flex-col gap-4">
+      <h2 id="veteran-title" class="text-3xl font-semibold tracking-tight text-vet-50 md:text-4xl">
+        {title}
+      </h2>
+      <p>{description}</p>
+    </header>
+
+    <div class="grid gap-8 md:grid-cols-2 md:items-start md:gap-12">
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl font-semibold text-vet-50">{stepsHeading}</h3>
+          <ol class="list-decimal space-y-4 pl-6">
+            {steps.map((step) => (
+              <li>
+                <p class="font-medium">{step.title}</p>
+                <p>{step.text}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h3 class="text-xl font-semibold text-vet-50">{documentsHeading}</h3>
+          <ul class="list-disc space-y-2 pl-6">
+            {documents.map((document) => (
+              <li>{document}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <aside
+        class="flex min-h-52 flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-vet-300 px-6 py-8 text-center"
+        aria-labelledby="veteran-partner-title"
+      >
+        <h3 id="veteran-partner-title" class="text-xl font-semibold text-vet-50">
+          {partnerHeading}
+        </h3>
+        {partner.logoSrc ? (
+          <img
+            src={partner.logoSrc}
+            alt={partner.logoAlt}
+            width={partner.logoWidth}
+            height={partner.logoHeight}
+            loading="lazy"
+            decoding="async"
+            class="h-auto max-h-16 w-auto max-w-full"
+          />
+        ) : null}
+        {partner.name ? (
+          <p>{partner.name}</p>
+        ) : partner.logoSrc ? null : (
+          <p>{partner.placeholder}</p>
+        )}
+      </aside>
+    </div>
+
+    <div class="flex flex-col gap-4">
+      <a
+        href={ctaHref}
+        class="btn bg-vet-300 text-vet-900 hover:bg-vet-50 w-full sm:w-auto"
+        data-evt="veteran_cta_click"
+        data-program="veteran"
+      >
+        {ctaLabel}
+      </a>
+      <p>{note}</p>
+    </div>
+  </div>
+</section>
