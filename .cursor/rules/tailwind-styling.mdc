@@ -1,0 +1,8 @@
+---
+description: Суворі правила верстки з Tailwind CSS.
+globs: src/**/*.astro, src/**/*.tsx
+alwaysApply: false
+---
+- Використовуй суворий підхід Mobile-First. Базові класи пишуться для мобільних пристроїв, адаптив — через префікси `md:`, `lg:`.
+- Забезпечуй Pixel-Perfect відповідність та семантичний HTML (використовуй `<section>`, `<article>`, `<nav>`, `<header>`, `<footer>`).
+- Уникай непотрібних довільних значень (arbitrary values) у Tailwind, використовуй стандартну конфігурацію теми.

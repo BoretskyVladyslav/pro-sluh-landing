@@ -1,17 +1,29 @@
 ---
-
+import '../styles/global.css';
+import HeroSection from '../components/HeroSection.astro';
+import VeteranCareSection from '../components/VeteranCareSection.astro';
+import ServiceCalculator from '../components/ServiceCalculator.astro';
+import DoctorProfile from '../components/DoctorProfile.astro';
+import ApparatusCatalog from '../components/ApparatusCatalog.astro';
+import LeadFormFooter from '../components/LeadFormFooter.astro';
 ---
 
-<html lang="en">
+<html lang="uk">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Про Слух</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<HeroSection />
+		<main>
+			<VeteranCareSection />
+			<ServiceCalculator />
+			<DoctorProfile />
+			<ApparatusCatalog />
+		</main>
+		<LeadFormFooter />
 	</body>
 </html>
