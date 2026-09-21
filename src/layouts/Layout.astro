@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Сурдолог у Дніпрі: діагностика слуху та підбір апаратів | Григорчук І. В.',
+  description = 'Діагностика слуху та підбір слухових апаратів у Дніпрі. Сурдолог Григорчук І. В.',
+} = Astro.props;
+
+const phoneHref = 'tel:+380';
+const phoneLabel = '+380 …';
+---
+
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0B5D6B" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="flex min-h-dvh flex-col pb-20 md:pb-0">
+    <header class="border-b border-brand-100 bg-cream">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
+        <a href="/" class="inline-flex min-h-14 items-center font-display text-xl font-semibold text-brand-900">
+          ProSluh
+        </a>
+        <nav aria-label="Контакти" class="flex items-center gap-2">
+          <a
+            href={phoneHref}
+            class="hidden min-h-14 items-center px-2 text-ink-600 md:inline-flex"
+          >
+            {phoneLabel}
+          </a>
+          <a href={phoneHref} class="btn btn-cta">Зателефонувати</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="border-t border-brand-100 bg-brand-50">
+      <p class="mx-auto max-w-6xl px-4 py-4 text-ink-600">
+        Самолікування може бути шкідливим для вашого здоров'я. Перед застосуванням
+        обов'язкова консультація лікаря.
+      </p>
+    </footer>
+
+    <div
+      class="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-brand-100 bg-cream p-2 pb-safe md:hidden"
+      role="navigation"
+      aria-label="Швидкі дії"
+    >
+      <a href={phoneHref} class="btn btn-cta">Зателефонувати</a>
+      <a href="#zapis" class="btn btn-brand">Записатися</a>
+    </div>
+  </body>
+</html>

@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';
+import Layout from '../layouts/Layout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import VeteranCareSection from '../components/VeteranCareSection.astro';
 import ServiceCalculator from '../components/ServiceCalculator.astro';
@@ -8,22 +8,11 @@ import ApparatusCatalog from '../components/ApparatusCatalog.astro';
 import LeadFormFooter from '../components/LeadFormFooter.astro';
 ---
 
-<html lang="uk">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Про Слух</title>
-	</head>
-	<body>
-		<HeroSection />
-		<main>
-			<VeteranCareSection />
-			<ServiceCalculator />
-			<DoctorProfile />
-			<ApparatusCatalog />
-		</main>
-		<LeadFormFooter />
-	</body>
-</html>
+<Layout>
+  <HeroSection />
+  <VeteranCareSection />
+  <ServiceCalculator />
+  <DoctorProfile />
+  <ApparatusCatalog />
+  <LeadFormFooter />
+</Layout>

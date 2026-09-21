@@ -1,1 +1,71 @@
 @import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/manrope";
+
+@theme {
+  --color-brand-50: #f1f7f8;
+  --color-brand-100: #d6eaee;
+  --color-brand-600: #0b5d6b;
+  --color-brand-900: #0e3a46;
+
+  --color-cream: #faf7f2;
+  --color-ink-900: #14262b;
+  --color-ink-600: #4a5b61;
+
+  --color-cta-700: #c2410c;
+  --color-cta-800: #9a3412;
+
+  --color-vet-50: #f3efe6;
+  --color-vet-300: #c8b08a;
+  --color-vet-900: #26332b;
+
+  --color-ok: #15803d;
+  --color-err: #b91c1c;
+  --color-warn: #b45309;
+
+  --font-sans: "Inter Variable", system-ui, sans-serif;
+  --font-display: "Manrope Variable", "Inter Variable", system-ui, sans-serif;
+
+  --text-base: 1.125rem;
+  --text-base--line-height: 1.625;
+
+  --spacing-safe: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+@layer base {
+  body {
+    @apply bg-cream font-sans text-base text-ink-900 antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-brand-900;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-600;
+  }
+
+  button,
+  .btn,
+  a[role="button"],
+  input:is([type="submit"], [type="button"]) {
+    @apply min-h-14 min-w-12;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex h-14 min-w-12 items-center justify-center rounded-lg px-5 font-medium;
+  }
+
+  .btn-cta {
+    @apply bg-cta-700 text-white hover:bg-cta-800;
+  }
+
+  .btn-brand {
+    @apply bg-brand-600 text-white hover:bg-brand-900;
+  }
+}
