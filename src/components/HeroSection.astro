@@ -1,4 +1,118 @@
 ---
+const phoneHref = 'tel:+380';
 ---
 
-<section id="hero"></section>
+<section id="hero" aria-labelledby="hero-title" class="bg-cream">
+  <div
+    class="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-2 md:items-center md:gap-12 md:py-16"
+  >
+    <div class="flex flex-col gap-6">
+      <a
+        href="#veterany"
+        class="inline-flex min-h-14 max-w-xl items-center rounded-lg border border-vet-300 bg-vet-50 px-4 py-3 text-vet-900"
+        data-evt="veteran_click"
+        data-loc="hero"
+      >
+        Ветеранам — послуги 100% безкоштовно при купівлі апарата*
+      </a>
+
+      <div class="flex flex-col gap-4">
+        <h1 id="hero-title" class="text-4xl font-semibold tracking-tight md:text-5xl">
+          Діагностика слуху та підбір слухових апаратів у Дніпрі
+        </h1>
+        <p class="text-ink-600">
+          Комп'ютерна аудіометрія, консультація сурдолога та підбір слухового апарата за
+          результатами обстеження. Прийом у Дніпрі — за попереднім записом.
+        </p>
+      </div>
+
+      <ul class="flex flex-wrap gap-2">
+        <li class="rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-brand-900">
+          Первинна консультація
+        </li>
+        <li class="rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-brand-900">
+          Комп'ютерна діагностика
+        </li>
+        <li class="rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-brand-900">
+          Індивідуальний підбір
+        </li>
+      </ul>
+
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a
+          href="#zapis"
+          class="btn btn-cta w-full sm:w-auto"
+          data-evt="booking_click"
+          data-loc="hero"
+        >
+          Записатися онлайн
+        </a>
+        <a
+          href={phoneHref}
+          class="btn btn-outline w-full sm:w-auto"
+          data-evt="click_call"
+          data-loc="hero"
+        >
+          Зателефонувати
+        </a>
+      </div>
+
+      <p class="text-ink-600">
+        * Умови програми — у розділі турботи про ветеранів. Консультація лікаря обов'язкова.
+      </p>
+    </div>
+
+    <figure class="overflow-hidden rounded-2xl border border-brand-100 bg-brand-50">
+      <svg
+        width="640"
+        height="520"
+        viewBox="0 0 640 520"
+        class="h-auto w-full"
+        role="img"
+        aria-labelledby="hero-art-title hero-art-desc"
+      >
+        <title id="hero-art-title">Кабінет комп'ютерної аудіометрії</title>
+        <desc id="hero-art-desc">
+          Схематичне зображення аудіометричної кабіни, навушників і панелі аудіометра. Лікаря не
+          зображено.
+        </desc>
+        <rect width="640" height="520" fill="#F1F7F8" />
+        <rect x="48" y="40" width="544" height="440" rx="24" fill="#D6EAEE" />
+        <rect x="88" y="80" width="280" height="280" rx="16" fill="#0E3A46" />
+        <rect x="112" y="104" width="232" height="180" rx="8" fill="#FAF7F2" />
+        <rect x="132" y="124" width="192" height="12" rx="6" fill="#0B5D6B" opacity="0.35" />
+        <rect x="132" y="152" width="160" height="12" rx="6" fill="#0B5D6B" opacity="0.5" />
+        <rect x="132" y="180" width="176" height="12" rx="6" fill="#0B5D6B" opacity="0.7" />
+        <rect x="132" y="208" width="128" height="12" rx="6" fill="#0B5D6B" />
+        <circle cx="176" cy="324" r="28" fill="#FAF7F2" />
+        <circle cx="280" cy="324" r="28" fill="#FAF7F2" />
+        <path
+          d="M176 324h104"
+          stroke="#C8B08A"
+          stroke-width="8"
+          stroke-linecap="round"
+          fill="none"
+        />
+        <rect x="400" y="120" width="152" height="200" rx="16" fill="#0B5D6B" />
+        <rect x="420" y="144" width="112" height="72" rx="8" fill="#FAF7F2" />
+        <rect x="432" y="160" width="16" height="48" rx="4" fill="#0E3A46" />
+        <rect x="456" y="176" width="16" height="32" rx="4" fill="#0E3A46" />
+        <rect x="480" y="152" width="16" height="56" rx="4" fill="#0E3A46" />
+        <rect x="504" y="168" width="16" height="40" rx="4" fill="#0E3A46" />
+        <circle cx="444" cy="252" r="10" fill="#FAF7F2" />
+        <circle cx="476" cy="252" r="10" fill="#FAF7F2" />
+        <circle cx="508" cy="252" r="10" fill="#FAF7F2" />
+        <rect x="420" y="280" width="112" height="16" rx="8" fill="#D6EAEE" />
+        <path
+          d="M88 400h464"
+          stroke="#0B5D6B"
+          stroke-width="2"
+          opacity="0.25"
+          fill="none"
+        />
+        <circle cx="520" cy="88" r="18" fill="#C8B08A" opacity="0.85" />
+        <circle cx="568" cy="128" r="10" fill="#C8B08A" opacity="0.5" />
+      </svg>
+    </figure>
+  </div>
+</section>
